@@ -14,9 +14,6 @@ class wordpress::app {
       path    =>  "${wordpress_src}/setup_files",
       before  =>  File[
                       'wordpress_php_configuration',
-                      'wordpress_themes',
-                      'wordpress_plugins',
-                      'wordpress_installer',
                       'wordpress_htaccess_configuration'
                       ];
     'wordpress_installer':
