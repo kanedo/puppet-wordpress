@@ -34,24 +34,6 @@ class wordpress::app {
       path       =>  "${wordpress_src}/.htaccess",
       source     =>  'puppet:///modules/wordpress/.htaccess',
       subscribe  =>  Exec['wordpress_extract_installer'];
-    'wordpress_themes':
-      ensure     => directory,
-      path       => "${wordpress_src}/setup_files/themes",
-      source     => 'puppet:///modules/wordpress/themes/',
-      recurse    => true,
-      purge      => true,
-      ignore     => '.svn',
-      notify     => Exec['wordpress_extract_themes'],
-      subscribe  => Exec['wordpress_extract_installer'];
-    'wordpress_plugins':
-      ensure     => directory,
-      path       => "${wordpress_src}/setup_files/plugins",
-      source     => 'puppet:///modules/wordpress/plugins/',
-      recurse    => true,
-      purge      => true,
-      ignore     => '.svn',
-      notify     => Exec['wordpress_extract_plugins'],
-      subscribe  => Exec['wordpress_extract_installer'];
     }
 
       exec {
