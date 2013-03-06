@@ -36,10 +36,8 @@ class wordpress::app {
       exec {
       'wordpress_extract_installer':
         command      => "unzip -o\
-                        ${wordpress_src}/setup_files/${wordpress_archive}\
-                        -d /opt/",
+                        ${wordpress_src}/setup_files/${wordpress_archive}",
         refreshonly  => true,
-        require      => Package['unzip'],
         path         => ['/bin','/usr/bin','/usr/sbin','/usr/local/bin'];
   }
 }
