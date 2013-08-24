@@ -1,8 +1,0 @@
-name    'puppet-wordpress'
-version '0.0.5'
-source 'https://github.com/jonhadfield/puppet-wordpress'
-author 'Jon Hadfield'
-license 'Apache2'
-summary 'Puppet module to set up an instance of wordpress'
-description 'Installs wordpress and dependencies.'
-project_page 'https://github.com/jonhadfield/puppet-wordpress'
